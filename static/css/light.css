@@ -1,0 +1,49 @@
+:root {
+
+    /* Common for all themes */
+
+    --anim_speed: 0s;
+
+    /* Global colors */
+
+    --main_bg: #ffffffbb;
+    --main_fg: #000000;
+    --main_bs: #818181;
+    
+    --selected_bg: #2252ee;
+    --selected_fg: #ebebeb;
+    --selected_bs: #2849a5;
+
+    --selected_hover_bg: #346dca;
+
+    --hover_bg: #a3a3a3;
+
+    /* Login colors */
+
+    --logo_bg: #df1c1c;
+    --logo_fg: #000000;
+    --logo_bs: #7c3434;
+
+    --autor:   #60739b;
+
+    /* Main page */
+
+    --logout_bg: #ee2222;
+    --logout_fg: #a52828;
+    --logout_hover_bg: #a52828;
+
+    /* General info */
+
+    --gradient: linear-gradient(
+        to right,
+        #00bb26ba 0%,
+        #72d000ba 33%,
+        var(--main_bg) 33%,
+        var(--main_bg) 100%
+    );
+    --info_fg:  #000;
+}
+
+html {
+    background-image: url('back.png');
+}

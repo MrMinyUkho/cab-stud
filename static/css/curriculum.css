@@ -1,0 +1,35 @@
+.curriculum_num {
+    font-weight: normal;
+    width: 5%;
+    text-align: left;
+}
+
+.curriculum_kaf {
+    font-weight: normal;
+    width: 52%;
+    text-align: left;
+}
+
+.curriculum_exm {
+    font-weight: normal;
+    width: 15%;
+    text-align: left;
+}
+
+.curriculum_ind {
+    font-weight: normal;
+    width: 14%;
+    text-align: left;
+}
+
+.curriculum_krd {
+    font-weight: normal;
+    width: 7%;
+    text-align: right;
+}
+
+.curriculum_hrs {
+    font-weight: normal;
+    width: 7%;
+    text-align: right;
+}

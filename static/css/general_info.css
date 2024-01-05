@@ -1,0 +1,16 @@
+.infop_block {
+    background: var(--gradient_gi);
+}
+
+.infod_block {
+    font-weight: normal;
+    text-align: left;
+    left: 33%;
+}
+
+.info_text {
+    font-weight: normal;
+    color: var(--info_fg);
+    text-align: left;
+    width: 33.3%;
+}

@@ -1,0 +1,53 @@
+#login_div {
+
+    vertical-align: center;
+    
+    position: absolute;
+    left: calc(75% / 2);
+    top: 33%;
+
+    width: 25%;
+
+    transition-property: top;
+    transition-duration: var(--anim_speed);
+}
+
+#login_logo {
+    text-align: center;
+    background-color: var(--logo_bg);
+    color: var(--logo_fg);
+    box-shadow: 0 2px 0 var(--logo_bs);
+}
+
+#forg {
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+#by {
+    color: var(--autor);
+    position: absolute;
+    bottom: 4px;
+    right: 4px;
+    text-decoration: none;
+}
+
+#login {
+    width: calc(100% - 1.25em);
+}
+
+#pass {
+    width: calc(100% - 1.25em);
+}
+
+#done {
+    text-align: center;
+    color: var(--selected_fg);
+    background-color: var(--selected_bg);
+    box-shadow: 0 2px 0 var(--selected_bs);
+}
+
+#done:hover {
+    background-color: var(--selected_hover_bg);
+}

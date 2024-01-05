@@ -1,0 +1,70 @@
+:root {
+    
+    /* Common for all themes */
+
+    --anim_speed: 0s;
+
+    /* Global colors */
+
+    --main_bg: #37373bbb;
+    --main_fg: #dbdbdb;
+    --main_bs: #1d1d1d;
+    
+    --selected_bg: #5269b9;
+    --selected_bg_alt: #3b9f34; 
+    --selected_fg: #ebebeb;
+    --selected_bs: #3a4255;
+
+    --selected_hover_bg: #346dca;
+
+    --hover_bg: #4d4d4d;
+
+    /* Login colors */
+
+    --logo_bg: #e23131;
+    --logo_fg: #ffffff;
+    --logo_bs: #522929;
+
+    --autor:   #60739b;
+
+    /* Main page */
+
+    --logout_bg: #e03838;
+    --logout_fg: #a52828;
+    --logout_hover_bg: #a52828;
+
+    /* General info */
+
+    --gradient_gi: linear-gradient(
+        to right,
+        var(--selected_bg) 0%,
+        var(--selected_bg) 33%,
+        var(--main_bg) 33%,
+        var(--main_bg) 100%
+    );
+    --info_fg:  #dadada;
+
+    /* Gradebook */
+
+    --gradient_grdb: linear-gradient(
+        to right,
+        var(--selected_bg) 0%,
+        var(--selected_bg) 65%,
+        var(--main_bg) 65%,
+        var(--main_bg) 100%
+    );
+
+    /* Raiting */
+
+    --gradient_rtng: linear-gradient(
+        to right,
+        var(--selected_bg) 0%,
+        var(--selected_bg) 55%,
+        var(--main_bg) 55%,
+        var(--main_bg) 100%
+    );
+}
+
+html {
+    background-color: #413e4d;
+}

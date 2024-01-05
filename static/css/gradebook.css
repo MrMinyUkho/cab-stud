@@ -1,0 +1,20 @@
+.infop_block_grdb {
+    background: var(--gradient_grdb);
+}
+
+.grdbk_name {
+    width: 66.5%;
+    text-align: left;
+    font-weight: normal;
+}
+
+.grdbk_credit {
+    width: 20%;
+    text-align: left;
+    font-weight: normal;
+}
+
+.grdbk_mark {
+    text-align: right;
+    font-weight: normal;
+}

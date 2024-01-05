@@ -1,0 +1,95 @@
+<div id="page_Curriculum" class="main_content">
+    <div id="crcl_semplace">
+            
+    </div>
+    <div>
+        <div class="infop_block_rtng text_block">
+            <table style="width: 100%;">
+                <tr>
+                    <th class="curriculum_num">
+                        №
+                    </th>
+                    <th class="curriculum_kaf">
+                        Дисципліна[Кафедра]
+                    </th>
+                    <th class="curriculum_exm">
+                        Е/З
+                    </th>
+                    <th class="curriculum_ind">
+                        І/З
+                    </th>
+                    <th class="curriculum_krd">
+                        Кредит
+                    </th>
+                    <th class="curriculum_hrs">
+                        Годин
+                    </th>
+                </tr>
+            </table>
+        </div>
+        <div id="curriculum_placeholder">
+
+        </div>
+    </div>
+</div>
+<script type="text/javascript"> 
+    pageModules["Curriculum"] = page.new("Curriculum", function (cont) {
+        a = `
+            <div class="infop_block_rtng text_block">
+                <table style="width: 100%;">
+                    <tr>
+                        <th class="curriculum_num">
+                            {0}
+                        </th>
+                        <th class="curriculum_kaf">
+                            {1}
+                        </th>
+                        <th class="curriculum_exm">
+                            {2}
+                        </th>
+                        <th class="curriculum_ind">
+                            {3}
+                        </th>
+                        <th class="curriculum_krd">
+                            {4}
+                        </th>
+                        <th class="curriculum_hrs">
+                            {5}
+                        </th>
+                    </tr>
+                </table>
+            </div>
+            `;
+        const place = document.getElementById("curriculum_placeholder");
+        var qwer = "";
+        for(let i in cont[this.name][selected_smr]) {
+            let g = cont[this.name][selected_smr][i];
+            let c = a.replace("{0}", 1+parseInt(i))
+                     .replace("{1}", g["subj_name"]+"["+g["kabr"]+"]")
+                     .replace("{4}", g["audit"])
+                     .replace("{5}", g["credit"]);
+            
+            if      (g["control"] == "Е") { c = c.replace("{2}", "Екзамен"); } 
+            else if (g["control"] == "З") { c = c.replace("{2}", "Залік");   }
+            else                          { c = c.replace("{2}", " ");       }
+
+            if      (g["indzav"] == "Р")  { c = c.replace("{3}", "Розрахункова");      } 
+            else if (g["indzav"] == "КП") { c = c.replace("{3}", "Курсовий проект");   }
+            else                          { c = c.replace("{3}", " ");                 }
+
+            qwer += c;
+        }
+        place.innerHTML = qwer;
+    });
+    pageModules["Curriculum"].hide = function(){
+        this.page.style.display = "none";
+        const place = document.getElementById("crcl_semplace");
+        place.innerHTML = ``;
+    }
+    pageModules["Curriculum"].show = function(){
+        this.page.style.display = "block";
+        const place = document.getElementById("crcl_semplace");
+        place.appendChild(semChoise);
+        reFapSemselect();
+    }
+</script>

@@ -1,0 +1,68 @@
+<div id="page_Gradebook">
+    <div id="grdb_semplace">
+        
+    </div>
+    <div>
+        <div class="infop_block_grdb text_block">
+            <table style="width: 100%;">
+                <tr>
+                    <th class="grdbk_name">
+                        Назва предмета, Викладач[Кафедра]
+                    </th>
+                    <th class="grdbk_credit">
+                        Кредит
+                    </th>
+                    <th class="grdbk_mark">
+                        Оцінка
+                    </th>
+                </tr>
+            </table>
+        </div>
+        <div id="gradebook_placeholder">
+
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    pageModules["Gradebook"] = page.new("Gradebook", function (cont) {
+        a = `
+                <div class="infop_block_grdb text_block">
+                    <table style="width: 100%;">
+                        <tr>
+                            <th class="grdbk_name">
+                                {0}, {1}
+                            </th>
+                            <th class="grdbk_credit">
+                                {2}
+                            </th>
+                            <th class="grdbk_mark">
+                                {3}
+                            </th>
+                        </tr>
+                    </table>
+                </div>
+            `;
+        const place = document.getElementById("gradebook_placeholder")
+        var qwer = "";
+        for(let i in cont[this.name][selected_smr]) {
+            let g = cont[this.name][selected_smr][i];
+            let c = a.replace("{0}", g["subject"])
+                     .replace("{1}", g["prepod"]+"["+g["kabr"]+"]")
+                     .replace("{2}", g["credit"])
+                     .replace("{3}", g["oc_bol"]);
+            qwer += c;
+        }
+        place.innerHTML = qwer;
+    });
+    pageModules["Gradebook"].hide = function(){
+        this.page.style.display = "none";
+        const place = document.getElementById("grdb_semplace");
+        place.innerHTML = ``;
+    }
+    pageModules["Gradebook"].show = function(){
+        this.page.style.display = "block";
+        const place = document.getElementById("grdb_semplace");
+        place.appendChild(semChoise);
+        reFapSemselect();
+    }
+</script>

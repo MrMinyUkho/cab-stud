@@ -1,0 +1,103 @@
+#main_panel {
+    width: calc(80vw - 1em - 10.5vh);
+    height: calc(90vh);
+
+    position: absolute;
+
+    margin-right:   calc(5vh - 0.5em);
+    margin-top:     calc(5vh - 0.5em);
+
+    right: -90vw;
+    top:0;
+
+    transition-property: right;
+    transition-duration: var(--anim_speed);
+
+
+}
+
+#about_site {
+    transition-property: top;
+    transition-duration: var(--anim_speed);
+}
+
+#accept {
+    background-color: #14c123;
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    width: calc(100% - 1em);
+}
+
+#accept:hover {
+    background-color: #29e438;
+}
+
+#about_site {
+    position: absolute;
+    left: 30%;
+    margin: auto;
+    width: 40%;
+    z-index: 1;
+    height: 50%;
+    top: 25%;
+    text-align: justify;
+}
+
+#side_panel {
+    
+    width: 20vw;
+    height: calc(90vh);
+
+    position: absolute;
+
+    display: inline-block;
+
+    padding-left: 30vw;
+
+    padding-top: 0.5em;
+
+    margin-top: calc(5vh - 0.5em);
+
+    left: -60vw;
+
+    transition-property: left;
+    transition-duration: var(--anim_speed);
+}
+
+#logout {
+    width: 20vw;
+    position: absolute;
+    bottom: 0;
+    right: 0.5em;
+    background-color: var(--logout_bg);
+    box-shadow: 0 2px 0 var(--logout_fg);
+    transition: background-color 0.3s;
+}
+
+
+
+#logout:hover {
+    background-color: var(--logout_hover_bg);
+}
+
+#page_General        { display:none; }
+#page_Gradebook      { display:none; }
+#page_Debts          { display:none; }
+#page_Curriculum     { display:none; }
+#page_Rating         { display:none; }
+#page_Schedule       { display:none; }
+#page_Sports_shedule { display:none; }
+#page_Tuition_fees   { display:none; }
+
+
+
+.main_content {
+    opacity: 100%;
+    transition: opacity 0.25s;
+}
+
+.slsm {
+    width: 4em;
+    height: 4em;
+}

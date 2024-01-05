@@ -1,0 +1,155 @@
+<div id="page_General" class="main_content">
+    <div class="infop_block text_block">
+        <table style="width: 100%;">
+            <tr>
+                <th class="info_text">
+                    Прізвище
+                </th>
+                <th class="infod_block" id="general_fam">   
+                </th>
+            </tr>
+        </table>
+    </div>
+    <div class="infop_block text_block">
+        <table style="width: 100%;">
+            <tr>
+                <th class="info_text">
+                    Ім'я
+                </th>
+                <th class="infod_block" id="general_imya">
+                </th>
+            </tr>
+        </table>
+    </div>
+    <div class="infop_block text_block">
+        <table style="width: 100%;">
+            <tr>
+                <th class="info_text">
+                    По-батькові
+                </th>
+                <th class="infod_block" id="general_otch">
+                </th>
+            </tr>
+        </table>
+    </div>
+    <div class="infop_block text_block">
+        <table style="width: 100%;">
+            <tr>
+                <th class="info_text">
+                    Курс
+                </th>
+                <th class="infod_block" id="general_kurs">
+                </th>
+            </tr>
+        </table>
+    </div>
+    <div class="infop_block text_block">
+        <table style="width: 100%;">
+            <tr>
+                <th class="info_text">
+                    Група
+                </th>
+                <th class="infod_block" id="general_grupa">
+                </th>
+            </tr>
+        </table>
+    </div>
+    <div class="infop_block text_block">
+        <table style="width: 100%;">
+            <tr>
+                <th class="info_text">
+                    Факультет/інститут
+                </th>
+                <th class="infod_block" id="general_fakultet">
+                </th>
+            </tr>
+        </table>
+    </div>
+    <div class="infop_block text_block">
+        <table style="width: 100%;">
+            <tr>
+                <th class="info_text">
+                    Кафедра
+                </th>
+                <th class="infod_block" id="general_kafedra">
+                </th>
+            </tr>
+        </table>
+    </div>
+    <div class="infop_block text_block">
+        <table style="width: 100%;">
+            <tr>
+                <th class="info_text">
+                    Спеціалізація/пропозиція/блок
+                </th>
+                <th class="infod_block" id="general_specialization">
+                </th>
+            </tr>
+        </table>
+    </div>
+    <div class="infop_block text_block">
+        <table style="width: 100%;">
+            <tr>
+                <th class="info_text">
+                    Спеціальність
+                </th>
+                <th class="infod_block" id="general_speciality">
+                </th>
+            </tr>
+        </table>
+    </div>
+    <div class="infop_block text_block">
+        <table style="width: 100%;">
+            <tr>
+                <th class="info_text">
+                    Освітня программа
+                </th>
+                <th class="infod_block" id="general_osvitprog">
+                </th>
+            </tr>
+        </table>
+    </div>
+    <div class="infop_block text_block">
+        <table style="width: 100%;">
+            <tr>
+                <th class="info_text">
+                    Рівень навчання
+                </th>
+                <th class="infod_block" id="general_train_level">
+                </th>
+            </tr>
+        </table>
+    </div>
+    <div class="infop_block text_block">
+        <table style="width: 100%;">
+            <tr>
+                <th class="info_text">
+                    Форма навчання
+                </th>
+                <th class="infod_block" id="general_train_form">
+                </th>
+            </tr>
+        </table>
+    </div>
+    <div class="infop_block text_block">
+        <table style="width: 100%;">
+            <tr>
+                <th class="info_text">
+                    Оплата
+                </th>
+                <th class="infod_block" id="general_oplata">
+                </th>
+            </tr>
+        </table>
+    </div>
+</div>
+<script type="text/javascript"> 
+    pageModules["General"] = page.new("General", function (cont) {
+        for(let d in cont[this.name]){
+            var el = document.getElementById(this.name.toLowerCase() + "_" + d);
+            if(el != null){
+                el.innerText = cont[this.name][d];
+            }
+        }
+    });
+</script>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Кабінет студента
+        </title>
+        <style type="text/css">
+            {{style|safe}}
+        </style>
+        <link rel="icon" href="{{url_for('static', filename='favicon.png')}}">
+        <script>{{jquery|safe}}</script>
+        <script>{{preload|safe}}</script>
+    </head>
+    <body>
+
+        <div class="main_div" id="about_site">
+            <div style="padding: 0.5em;">
+                Шановний студент, цей сайт створей тільки заради естетичної насолоди і повністю 
+                повторює функціонал офіційного кабінеита студента. Важливо зазначити, що ваші 
+                дані ніде не сберігаються та нікуди не передаються. Сервер цього сайту виконує 
+                задачу загрузки візуалу та функціоналу. Усі данні про вас сайт отримує напряму 
+                з сервера ХПІ. Щоб у цьому переконатись ви можете натиснути F12 та зайти на 
+                вкладку "Мережа"(рос. "Сеть"), перезавантажити сторінку та переглянути усі запити. 
+                Вони всі направлені на сервера ХПІ.
+                <br>
+                Код цього сайту відкритий та викладений на 
+                <a  style="color: rgb(245, 212, 164); 
+                           text-decoration: none;" 
+                    href="https://github.com/MrMinyUkho/cab-stud"
+                    target="_blank" 
+                    rel="noopener noreferrer">
+                    GitHub
+                </a>'і
+            </div>
+            <input type="button"   value="Зрозуміло"       name="accept"     id="accept">
+        </div>
+
+        <div class="main_div scrollable_div", id="main_panel">
+            {{pages|safe}}
+        </div>
+
+        <div class="main_div"  id="login_div">
+            <div id="login_logo", class="text_block">
+                Неофіційний Кабінет студента
+            </div>
+            <input type="text"     placeholder="Пошта"  name="login"    id="login"><br>
+            <input type="password" placeholder="Пароль" name="password" id="pass"><br>
+            <input type="button"   value="Увійти"       name="done"     id="done">
+            <!--<div id="forg", class="text_block"><a href="">Забули пароль?</a></div>-->
+        </div>
+
+        <div class="main_div", id="side_panel">
+            <input type="button"   value="Загальна інформація"      class="menu_button",     name="General"         id="General">
+            <input type="button"   value="Залікова книжка"          class="menu_button",     name="Gradebook"       id="Gradebook">
+            <input type="button"   value="Рейтинг"                  class="menu_button",     name="Rating"          id="Rating">
+            <input type="button"   value="Борги"                    class="menu_button",     name="Debts"           id="Debts">
+            <input type="button"   value="Розклад академ занять"    class="menu_button",     name="Schedule"        id="Schedule">
+            <input type="button"   value="Розклад спорт кафедри"    class="menu_button",     name="Sports_schedule" id="Sports_schedule">
+            <input type="button"   value="Навчальний план"          class="menu_button",     name="Curriculum"      id="Curriculum">
+            <input type="button"   value="Оплати за навчання"       class="menu_button",     name="Tuition_fees"    id="Tuition_fees">
+            <input type="button"   value="Вийти"                    class="logout_button",   id="logout">
+        </div>
+
+        <a href="https://www.github.com/MrMinyUkho" id="by">
+            by MrMinyUkho
+        </a>
+    </body>
+    <script>{{main|safe}}</script>
+</html>

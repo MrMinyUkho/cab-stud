@@ -1,0 +1,49 @@
+.infop_block_rtng {
+    background: var(--gradient_rtng);
+}
+
+.infop_block_rtng_you {
+    background: linear-gradient(
+        to right,
+        var(--selected_bg_alt) 20%,
+        var(--selected_bg) 55%,
+        var(--main_bg) 55%,
+        var(--main_bg) 100%
+    )
+}
+
+.rating_num {
+    font-weight: normal;
+    text-align: left;
+    width: 5%;
+}
+
+.rating_fio {
+    font-weight: normal;
+    text-align: left;
+    width: 28%;
+}
+
+.rating_grp {
+    font-weight: normal;
+    text-align: left;
+    width: 10%;
+}
+
+.rating_sto {
+    font-weight: normal;
+    text-align: right;
+    width: 20%;
+}
+
+.rating_naz {
+    font-weight: normal;
+    text-align: right;
+    width: 20%;
+}
+
+.rating_dop {
+    font-weight: normal;
+    text-align: right;
+    width: 20%;
+}
