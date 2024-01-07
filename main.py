@@ -57,4 +57,4 @@ def main():
 if __name__=='__main__':
     with app.app_context():
         app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
-        app.run(port=80, debug=True, host='0.0.0.0')
+        app.run(port=61124, debug=True, host='127.0.0.1')
