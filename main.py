@@ -38,7 +38,7 @@ def renderPage():
     for i in pages:
         pgs += render_template(i + '.html')
     return render_template('main.html', 
-                            style=style, 
+                            styles=style, 
                             pages=pgs,
                             main=mainjs,
                             preload=preload,

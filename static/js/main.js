@@ -145,6 +145,9 @@ function hideMain(){
 
 $(document).ready(function () {
 
+    document.getElementById("semplace").innerHTML = semChoise.innerHTML;
+    reFapSemselect();
+    
     var content      = {};
     var ret          = NaN;
 

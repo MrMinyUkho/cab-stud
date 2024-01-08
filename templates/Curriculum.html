@@ -27,9 +27,6 @@
                 </tr>
             </table>
         </div>
-        <div id="curriculum_placeholder">
-
-        </div>
     </div>
 </div>
 <script type="text/javascript"> 
@@ -81,15 +78,4 @@
         }
         place.innerHTML = qwer;
     });
-    pageModules["Curriculum"].hide = function(){
-        this.page.style.display = "none";
-        const place = document.getElementById("crcl_semplace");
-        place.innerHTML = ``;
-    }
-    pageModules["Curriculum"].show = function(){
-        this.page.style.display = "block";
-        const place = document.getElementById("crcl_semplace");
-        place.appendChild(semChoise);
-        reFapSemselect();
-    }
 </script>

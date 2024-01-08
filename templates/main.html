@@ -5,7 +5,7 @@
             Кабінет студента
         </title>
         <style type="text/css">
-            {{style|safe}}
+            {{styles|safe}}
         </style>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
         <link rel="icon" href="{{url_for('static', filename='favicon.png')}}">
@@ -37,6 +37,9 @@
         </div>
 
         <div class="main_div scrollable_div", id="main_panel">
+            <div id="semplace">
+                
+            </div>
             {{pages|safe}}
         </div>
 
@@ -46,8 +49,7 @@
             </div>
             <input type="text"     placeholder="Пошта"  name="login"    id="login"><br>
             <input type="password" placeholder="Пароль" name="password" id="pass"><br>
-            <input type="button"   value="Увійти"       name="done"     id="done">
-            <!--<div id="forg", class="text_block"><a href="">Забули пароль?</a></div>-->
+            <input type="button"   value="Увійти"       name="done"     id="done" style="margin-bottom: 2px;">
         </div>
 
         <div class="main_div", id="side_panel">

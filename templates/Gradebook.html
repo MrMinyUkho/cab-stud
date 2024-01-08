@@ -1,7 +1,4 @@
 <div id="page_Gradebook">
-    <div id="grdb_semplace">
-        
-    </div>
     <div>
         <div class="infop_block_grdb text_block">
             <table style="width: 100%;">
@@ -54,15 +51,4 @@
         }
         place.innerHTML = qwer;
     });
-    pageModules["Gradebook"].hide = function(){
-        this.page.style.display = "none";
-        const place = document.getElementById("grdb_semplace");
-        place.innerHTML = ``;
-    }
-    pageModules["Gradebook"].show = function(){
-        this.page.style.display = "block";
-        const place = document.getElementById("grdb_semplace");
-        place.appendChild(semChoise);
-        reFapSemselect();
-    }
 </script>
