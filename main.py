@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-import os
+import os, random
 
 app = Flask(__name__)
 app.config["TEMPLATES_AUTO_RELOAD"] = True
@@ -56,5 +56,8 @@ def main():
 
 if __name__=='__main__':
     with app.app_context():
-        app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
+        key = os.environ.get("SECRET_KEY")
+        if(key is None):
+            key = "".join([chr(random.randint(0, 255)) for _ in range(30)])
+        app.secret_key = key
         app.run(port=61124, debug=True, host='127.0.0.1')
