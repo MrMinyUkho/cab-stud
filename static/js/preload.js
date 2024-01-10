@@ -1,9 +1,20 @@
 const page = {
     name: "",
     page: "",
+    semChoise: true,
     update: function(cont){},
-    hide: function(){this.page.style.display = "none"},
-    show: function(){this.page.style.display = "block"},
+    hide: function(){
+        this.page.style.display = "none";
+    },
+    show: function(){
+        this.page.style.display = "block";
+        const semplace = document.getElementById("semplace");
+        if (this.semChoise == true) {
+            semplace.style.display = "block";
+        } else {
+            semplace.style.display = "none";
+        }
+    },
     new: function(name, updatefn){
         const newPage = {...page};
         newPage.name = name;
@@ -13,6 +24,7 @@ const page = {
         return newPage;
     },
 }
+
 var pageModules = {};
 const semChoise = document.createElement('div');
 semChoise.innerHTML = `
@@ -58,6 +70,7 @@ semChoise.innerHTML = `
 </table>`
 
 // Нужно передёрнуть после каждой смены родителя
+// UPD: Уже не нужно, но пускай останеться
 
 function reFapSemselect() {
     $(".sem_button").on("click", function(){
