@@ -112,16 +112,17 @@ var login        = getCookie("user");
 var passw        = getCookie("pass");
 
 function changePage(){
-    for(let pg in pageModules){
-        try {
+    for(let pg in pageModules){             // ну очень оптимальный алгоритм смены страниц
+        try {                               // скрываем всё(даже если скрыто)
             pageModules[pg].hide();
         } catch {}
     }
     try{
-        pageModules[current_page].show();
+        pageModules[current_page].show();   // показываем нужную
     } catch {}
 }
 
+// Ниже функции просто для анимашек
 function showContent(){
     main_panel.style.right  = "0";
 }
@@ -145,33 +146,9 @@ function hideMain(){
 
 $(document).ready(function () {
 
+    // Закидывания блока выбора семестра на своё место(Мне впадлу руками было переносить)
     document.getElementById("semplace").innerHTML = semChoise.innerHTML;
-    reFapSemselect();
-    
-    var content      = {};
-    var ret          = NaN;
-
-    function getData(page){
-        return $.ajax({
-            type: "POST",
-            url: "/",
-            contentType: "application/json",
-            dataType: "json",
-            data: JSON.stringify({
-                type: "get_data",
-                login: login,
-                passw: passw,
-                page: page
-            }),
-            success: function(data){
-                content = applyDicts(content, data.content);
-                for(let fn in pageModules){
-                    pageModules[fn].update(content);
-                }
-                ret = data.status;
-            }
-        });
-    }
+    reFapSemselect(); // И привязкаобработчика нажатия это всё в preload.js
 
     function loginfn(lg) {
         login = lg[0];
@@ -179,10 +156,9 @@ $(document).ready(function () {
         $.when(LoginAPI(login, passw)).done(function(a){
             console.log(dataAPI);
             console.log(current_page);
-            if(current_page != "General") {
-                getPage(current_page);
-
-            }
+            if(current_page != "General") { // С логином автоматически приходит общая информация
+                getPage(current_page);      // по этому если в куках лежит другая страница её надо
+            }                               // в тот же момент подгрухить
             changePage(current_page);
             showMain();
         });
@@ -200,33 +176,32 @@ $(document).ready(function () {
     // автологина showMain() мгновенно заканчивал анимацию
     setTimeout(function(){document.querySelector(':root').style.setProperty("--anim_speed", "1s")}, 500);
 
-    // Логин
-
-    $("#done").click( function(){
-        loginfn([$("#login").val(), $("#pass").val()]);
+    $("#done").click( () => { 
+        loginfn([$("#login").val(), $("#pass").val()]); // Логин
     });
 
     $("#accept").click( () => {
-        document.getElementById("about_site").style.setProperty("top", "-100%")
-    })
+        // Кнопка для скрытия дисклеймера
+        document.getElementById("about_site").style.setProperty("top", "-100%");
+    });
 
     // Смена страниц
     
     $(".menu_button").on("click", function(){
-        event.stopPropagation();
-        event.stopImmediatePropagation();
+        event.stopPropagation();                // Хз зачем это надо. Я даже не помню с какой проблемой
+        event.stopImmediatePropagation();       // я столкнулся. Вроде с анимациями связано
         if(current_page == null) {current_page = this.attributes.id.value;}
         if(this.attributes.id.value != current_page){
-            let prev_butt = document.getElementById(current_page);
+            let prev_butt = document.getElementById(current_page);      // Тут мы красим кнопочки(фронтенд момент)
             prev_butt.attributes.class.value = "menu_button";
             this.attributes.class.value = "menu_button, current_page";
             current_page = this.attributes.id.value;
             if(dataAPI[current_page] == undefined || (dataAPI[current_page][selected_smr] == undefined && current_page != "General")){ 
-                getPage(current_page);
+                getPage(current_page);                                  // Если страница не подгружена, загружаем
             }
-            setCookie("current_page", current_page, 360*24*60);
+            setCookie("current_page", current_page, 360*24*60);         // Пишем в куки текущую страницу
             hideContent();
-            setTimeout(changePage, 950);
+            setTimeout(changePage, 950);                                // Тут как раз магия смены страницы
             setTimeout(showContent, 1000);
         } 
     });    
@@ -234,7 +209,6 @@ $(document).ready(function () {
     // Логаут
 
     $("#logout").click( function() {
-        deleteAllCookies();
-        hideMain();
-    });
+        hideMain();                     // Ну какого-то адекватного логаута нет по этому
+    });                                 // просто возвращаеся к логину
 });

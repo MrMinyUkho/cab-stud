@@ -11,8 +11,8 @@ pages = [
     "Gradebook",
     "Rating",
     "Debts",
-    "Schedule",
-    "Sports_schedule",
+#    "Schedule",
+#    "Sports_schedule",
     "Curriculum",
     "Tuition_fees"
 ]
@@ -60,4 +60,4 @@ if __name__=='__main__':
         if(key is None):
             key = "".join([chr(random.randint(0, 255)) for _ in range(30)])
         app.secret_key = key
-        app.run(port=61124, debug=True, host='127.0.0.1')
+        app.run(port=61124, host='127.0.0.1')

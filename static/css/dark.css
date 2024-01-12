@@ -63,6 +63,16 @@
         var(--main_bg) 55%,
         var(--main_bg) 100%
     );
+
+    /* Debts */
+
+    --gradient_dbts: linear-gradient(
+        to right,
+        var(--selected_bg) 0%,
+        var(--selected_bg) 36%,
+        var(--main_bg) 36%,
+        var(--main_bg) 100%
+    );
 }
 
 html {

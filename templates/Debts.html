@@ -1,3 +1,67 @@
 <div id="page_Debts" class="main_content">
-    
+    <div>
+        <div class="infop_block_dbts text_block">
+            <table style="width: 100%;">
+                <tr>
+                    <th class="dbts_th_l" style="width: 5%;">
+                        №
+                    </th>
+                    <th class="dbts_th_l" style="width: 30%;">
+                        Назва предмета, Викладач[Кафедра]
+                    </th>
+                    <th class="dbts_th_r" style="width: 25%;">
+                        Е/З
+                    </th>
+                    <th class="dbts_th_r" style="width: 25%;">
+                        І/З
+                    </th>
+                    <th class="dbts_th_r" style="width: 15%;">
+                        Курс
+                    </th>
+                </tr>
+            </table>
+        </div>
+        <div id="debts_placeholder">
+
+        </div>
+    </div>
 </div>
+<script type="text/javascript">
+    pageModules["Debts"] = page.new("Debts", function (cont) {
+        a = `
+            <div class="infop_block_dbts text_block">
+                <table style="width: 100%;">
+                    <tr>
+                        <th class="dbts_th_l" style="width: 5%;">
+                            {0}
+                        </th>
+                        <th class="dbts_th_l" style="width: 30%;">
+                            {1}
+                        </th>
+                        <th class="dbts_th_r" style="width: 25%;">
+                            {2}
+                        </th>
+                        <th class="dbts_th_r" style="width: 25%;">
+                            {3}
+                        </th>
+                        <th class="dbts_th_r" style="width: 15%;">
+                            {4}
+                        </th>
+                    </tr>
+                </table>
+            </div>  
+            `;
+        const place = document.getElementById("debts_placeholder")
+        var qwer = "";
+        for(let i in cont[this.name][selected_smr]) {
+            let g = cont[this.name][selected_smr][i];
+            let c = a.replace("{0}", 1+parseInt(i))
+                     .replace("{1}", g["subj_name"] + ", " + g["prepod_fio"]+"["+g["kabr"]+"]")
+                     .replace("{2}", g["indzav"])
+                     .replace("{3}", g["control"])
+                     .replace("{4}", g["kurs"]+"("+g["semester"]+"сем.)");
+            qwer += c;
+        }
+        place.innerHTML = qwer;
+    });
+</script>

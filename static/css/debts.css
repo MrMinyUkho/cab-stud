@@ -1,0 +1,13 @@
+.infop_block_dbts {
+    background: var(--gradient_dbts);
+}
+
+.dbts_th_l {
+    text-align: left;
+    font-weight: normal;
+}
+
+.dbts_th_r {
+    text-align: right;
+    font-weight: normal;
+}
