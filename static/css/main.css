@@ -12,8 +12,6 @@
 
     transition-property: right;
     transition-duration: var(--anim_speed);
-
-
 }
 
 #about_site {
