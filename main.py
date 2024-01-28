@@ -64,7 +64,7 @@ def renderPageMobile():
             style+=f.read()
     for i in pages:
         pgs += render_template(i + '.html')
-    return render_template('main.html', 
+    return render_template('main_mobile.html', 
                             styles=style, 
                             pages=pgs,
                             main=mainjs,
